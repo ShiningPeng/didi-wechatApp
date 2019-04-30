@@ -11,6 +11,7 @@ Page({
     isLoading: false,
     address: '',
     destination: null,
+    waitingTimes: '正在计算中',
     callCart: false,
     costType: [
       {typeName: '拼车', typeImageUrl: '../../assets/images/costCart.png', pay: null},
@@ -95,7 +96,8 @@ Page({
     })
     .then((res) => {
       const waitingTimesArr = res.data.waitingTimes;
-      var index = Math.floor((Math.random() * waitingTimesArr.length));
+      const index = Math.floor((Math.random() * waitingTimesArr.length));
+      // var index = 
       this.setData({
         navData: res.data.navData,
         cost: res.data.cost,
@@ -120,6 +122,11 @@ Page({
     setTimeout(() => {
       this.requestCart();
     }, 1500)
+  },
+  toWait() {
+    wx.navigateTo({
+      url: '/pages/wait/wait'
+    })
   },
   getUserInfo: function(e) {
     console.log(e)

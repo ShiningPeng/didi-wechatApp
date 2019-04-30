@@ -62,7 +62,7 @@
             <text class="carpooling-name">
               {{item.typeName}}
             </text>
-           <image class='.carpooling-image' src="{{item.typeImageUrl}}" />
+           <image class='carpooling-image' src="{{item.typeImageUrl}}" />
             <text class="carpooling-money">
               预估
               <text style="font-size: 40rpx;"> {{item.pay}} </text>
